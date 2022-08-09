@@ -1,6 +1,5 @@
 import "./Quizz.css";
 import { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import Question from "../Question/Question";
@@ -8,8 +7,8 @@ import { getAllQuestions } from "../../api/QuestionsAPI";
 
 const Quizz = () => {
     const [questions, setQuestions] = useState([]);
-    const [showResult, setShowResult] = useState(false);
     const [fetching, setFetching] = useState(true);
+    const [showResult, setShowResult] = useState(false);
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -18,6 +17,7 @@ const Quizz = () => {
             setFetching(false);
         };
 
+        // Only fetch new questions when the user presses play again
         if (!showResult) {
             fetchQuestions();
             setFetching(true);
@@ -64,7 +64,7 @@ const Quizz = () => {
 
     const renderedQuestions = questions.map((question) => (
         <Question
-            key={nanoid()}
+            key={question.id}
             question={question}
             onSelectAnswer={selectAnswer}
             showResult={showResult}
