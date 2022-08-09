@@ -16,7 +16,7 @@ export const getAllQuestions = async (numberOfQuestions) => {
         );
         const data = await response.json();
 
-        // Shuffle the answers
+        // Shuffle the answers and give it an id
         const questions = data.results.map((question) => ({
             ...question,
             id: nanoid(),
