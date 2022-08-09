@@ -57,6 +57,7 @@ hr {
 
 .correct-ans {
     background: #94d7a2;
+    border: none;
 }
 
 .correct-ans:disabled {
