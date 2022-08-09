@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import MainMenu from "./components/MainMenu/MainMenu";
+import Quizz from "./components/Quizz/Quizz";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [screen, setScreen] = useState("mainmenu");
+
+    const onStartQuizz = () => {
+        setScreen("quizz");
+    };
+
+    return (
+        <div className="App">
+            {screen === "mainmenu" && <MainMenu onClickStart={onStartQuizz} />}
+            {screen === "quizz" && <Quizz />}
+        </div>
+    );
 }
 
 export default App;

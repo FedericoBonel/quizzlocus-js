@@ -1,0 +1,43 @@
+.header-container {
+    text-align: center;
+}
+
+.header-container_title {
+    margin: 24px 0;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 37px;
+    text-align: center;
+    color: #293264;
+}
+
+.header-container_desc {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 19px;
+    text-align: center;
+    color: #293264;
+}
+
+.start-btn {
+    margin: 29px 0;
+    padding: 16px 38px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #f5f7fb;
+    background: #4d5b9e;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.start-btn:hover {
+    filter: brightness(1.1);
+}
+
+.start-btn:active {
+    filter: brightness(0.9);
+}
